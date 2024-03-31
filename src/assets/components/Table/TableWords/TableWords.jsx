@@ -8,8 +8,8 @@ const { english, transcription, russian, tags } = props
 
 	return(
     <>
-    <TableBody className={style.header}>
-      <TableCell>{english}</TableCell>
+    <TableBody>
+      <TableCell className={style.header}>{english}</TableCell>
       <TableCell>{transcription}</TableCell>
       <TableCell>{russian}</TableCell>
       <TableCell>{tags}</TableCell>
