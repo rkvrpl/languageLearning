@@ -6,7 +6,8 @@ const Table = (props) =>{
 
 	return(
 		<TableHeader childComponent={
-			words.map((item) => {return(<TableWords 
+			words.map((item) => {return(
+			<TableWords 
 			english={item.english} 
 			transcription={item.transcription} 
 			russian={item.russian} 
