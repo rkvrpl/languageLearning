@@ -21,7 +21,29 @@
 }
 .pencil:hover,
 .trash:hover{
-	width: 50px;
-	height: 50px;
-	margin: 0 0 0 15px;
+	transform: scale(1.4);
+}
+.save{
+	position: relative;
+	transform: translate(-59%, -37%);
+	color: rgb(255, 239, 220);
+	border: 0;
+	border-radius: 15px;
+	background-color: #EDA8AA;
+	padding: 8px;
+	transition: 0.7s;
+}
+.save:hover{
+	transform: translate(-59%, -37%) scale(1.2);
+}
+@keyframes ani {
+	0% {opacity: 0;}
+	50% {opacity: 0.5;}
+	100% {opacity: 1;}
+  }
+.input{
+	border-radius: 15px;
+	padding: 10px;
+	border-color: #EDA8AA;
+	animation: ani 2.5s forwards;
 }

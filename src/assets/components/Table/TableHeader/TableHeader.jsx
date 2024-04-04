@@ -18,7 +18,7 @@ const TableHeader = (props) =>{
 						<TableCell className={styles.header} sx={{ width: 200 }}>Транскрипция</TableCell>
 						<TableCell className={styles.header} sx={{ width: 200 }}>Перевод</TableCell>
 						<TableCell className={styles.header} sx={{ width: 200 }}>Тэг</TableCell>
-						<TableCell className={styles.header} sx={{ width: 200 }}>Изменить / Удалить</TableCell>
+						<TableCell className={styles.header} sx={{ width: 300 }}>Изменить / Удалить</TableCell>
 					</TableRow>
 				</TableHead>
 				{props.childComponent}

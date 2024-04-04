@@ -12,7 +12,8 @@ const Table = (props) =>{
 			transcription={item.transcription} 
 			russian={item.russian} 
 			tags={item.tags} 
-			key={item.id}/>
+			key={item.id}
+			id ={item.id}/>
 		)})}/>
 	)
 }
