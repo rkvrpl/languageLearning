@@ -1,0 +1,39 @@
+
+.border{
+	display: flex;
+	flex-direction: column;
+    justify-content: space-around;
+    align-items: center; 
+	font-family: var(--font);
+	width: 200px;
+	min-height: 300px;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 1px 1px 15px 15px rgba(216, 112, 147, 0.3);
+	background-color: rgba(255, 228, 196, 0.4);
+	padding: 15px;
+	margin: 2vw auto;
+}
+.word{
+	font-size: 2rem;
+}
+.transcription{
+	color: rgba(0, 0, 0, 0.6);
+}
+.button{
+	position: absolute;
+	transform:translate(-50%, -50%);
+	font-size: 1rem;
+	border: none;
+	color: bisque;
+	background-color: rgba(216, 112, 147, 0.5);
+	border-radius: 20px;
+	padding: 1vw;
+	transform: scale();
+}
+.wordRu{
+	position: absolute;
+	transform:translate(-50%, -50%);
+	color: rgba(216, 112, 147, 0.6);
+	font-size: 2vw;
+}
