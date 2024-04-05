@@ -30,9 +30,9 @@ const handelChangeState = () => setChange(!change)
       </> 
       :<>
       <TableCell className={style.header}>{english}</TableCell>
-      <TableCell>{transcription}</TableCell>
-      <TableCell>{russian}</TableCell>
-      <TableCell>{tags}</TableCell>
+      <TableCell className={style.header}>{transcription}</TableCell>
+      <TableCell className={style.header}>{russian}</TableCell>
+      <TableCell className={style.header}>{tags}</TableCell>
       </> 
       }
       <TableCell align='right'> 

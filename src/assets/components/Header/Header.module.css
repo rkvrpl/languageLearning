@@ -6,3 +6,9 @@
 	display: flex;
 	justify-content: space-around;
 }
+.nav{
+	font-family: var(--font);
+	font-size: 1.7rem;
+	color: var(--font-color);
+	margin: 10px;
+}

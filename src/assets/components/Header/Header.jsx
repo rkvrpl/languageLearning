@@ -5,8 +5,8 @@ const Header = () =>{
 		<header className={style.header}>
 			<nav>
 				<ul className={style.navigation}>
-					<li>Главная</li>
-					<li>Все слова</li>
+					<li className={style.nav}>Главная</li>
+					<li className={style.nav}>Все слова</li>
 				</ul>
 			</nav>
 		</header>
