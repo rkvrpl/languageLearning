@@ -1,5 +1,6 @@
 import Header from './assets/components/Header/Header'
-// import CardOfWord from './assets/components/Card/CardOfWord'
+import CardOfWord from './assets/components/Card/CardOfWord'
+// import Carousel from './assets/components/Card/Carousel/Carousel'
 import Table from './assets/components/Table/Table/Table'
 import Footer from './assets/components/Footer/Footer'
 
@@ -9,11 +10,12 @@ function App() {
   return (
       <div className='content'>
         <Header />
-        {/* <CardOfWord english='apple' transcription='[æpl]'  russian='яблоко'/> */}
+        {/* <Carousel /> */}
+        <CardOfWord english='apple' transcription='[æpl]'  russian='яблоко'/>
         <Table />
         <Footer />
       </div>
   )
 }
-// english, transcription, russian
+
 export default App

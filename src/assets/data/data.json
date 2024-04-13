@@ -1,6 +1,6 @@
 [
 {
-	"id": "15475",
+	"id": "1",
 	"english": "apple",
 	"transcription": "[æpl]",
 	"russian": "яблоко",
@@ -8,7 +8,7 @@
 	"tags_json": "[\"fruit\"]"
 },
 {
-	"id": "15486",
+	"id": "2",
 	"english": "two",
 	"transcription": "[tu:]",
 	"russian": "два",
@@ -16,7 +16,7 @@
 	"tags_json": "[\"numbers\"]"
 },
 {
-	"id": "15525",
+	"id": "3",
 	"english": "one",
 	"transcription": "[one]",
 	"russian": "один",
@@ -24,7 +24,7 @@
 	"tags_json": "[\"numbers\"]"
 },
 {
-	"id": "15527",
+	"id": "4",
 	"english": "cup",
 	"transcription": "[kʌp]",
 	"russian": "чашка",
