@@ -10,19 +10,23 @@ const CardOfWord = (props) => {
 	const handelShowState = () =>{
 		setShow(!show)
 	}
+	const wordsNew = words.map((element) => element)
+
+	console.log(wordsNew.length)
+
 	const handelNextState = () =>{
-		// next<=words.length? 
-		// setNext(next + 1):
-		// setNext(next = 0)
-		if(next <= words.length){
+		if(next <= wordsNew.length){
 			setNext(next + 1)
-			console.log(next)
-			console.log(words.length)
+			setShow(!show)
+		}else{
+			setNext(next == 0)
 		}
 	}
 	const handelBackState = () =>{
-
-		setNext(next -1)
+		if(next > 0){
+			setNext(next -1)
+			setShow(!show)
+		}
 	}
 
 	return(
