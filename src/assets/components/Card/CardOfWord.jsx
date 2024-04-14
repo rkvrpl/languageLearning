@@ -11,9 +11,17 @@ const CardOfWord = (props) => {
 		setShow(!show)
 	}
 	const handelNextState = () =>{
-		setNext(next + 1)
+		// next<=words.length? 
+		// setNext(next + 1):
+		// setNext(next = 0)
+		if(next <= words.length){
+			setNext(next + 1)
+			console.log(next)
+			console.log(words.length)
+		}
 	}
 	const handelBackState = () =>{
+
 		setNext(next -1)
 	}
 
