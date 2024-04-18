@@ -10,7 +10,7 @@ import styles from './TableHeader.module.css'
 const TableHeader = (props) =>{
 
 	return(
-		<TableContainer>
+		<TableContainer className={styles.table}>
 			<Table>
 				<TableHead>
 					<TableRow>

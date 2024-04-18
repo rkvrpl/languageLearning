@@ -7,37 +7,39 @@ const CardOfWord = (props) => {
 	const [show , setShow] = useState(true)
 	const [next , setNext] = useState(0)
 
-	const handelShowState = () =>{
-		setShow(!show)
-	}
-	const wordsNew = words.map((element) => element)
-
-	console.log(wordsNew.length)
-
-	const handelNextState = () =>{
-		if(next <= wordsNew.length){
-			setNext(next + 1)
+	const handleShowState = () =>{
+		if(show){ 
 			setShow(!show)
-		}else{
-			setNext(next == 0)
+		} 
+	}
+
+	const handleNextState = () =>{
+		if(next < words.length - 1){
+			setNext(next+ 1)
+		}else {
+		setNext(0)
 		}
 	}
-	const handelBackState = () =>{
+	const handleBackState = () =>{
 		if(next > 0){
 			setNext(next -1)
-			setShow(!show)
+		} else {
+			setNext(words.length - 1)
 		}
 	}
 
 	return(
 		<div className={styles.block}>
-		<button className={styles.arrow} onClick={handelBackState}>&lang;</button>
-		<section className={styles.border}>
-			<h2 className={styles.word}>{words[next].english}</h2>
-			<p className={styles.transcription}>{words[next].transcription}</p>
-			<span onClick={handelShowState}>{show ? <button className={styles.button}>Проверить</button>: <p className={styles.wordRu}>{words[next].russian}</p>}</span>
-		</section>
-		<button className={styles.arrow} onClick={handelNextState}> &rang;</button>
+			<button className={styles.arrow} onClick={handleBackState}>&lang;</button>
+			<section className={styles.border}>
+				<h2 className={styles.word}>{words[next].english}</h2>
+				<p className={styles.transcription}>{words[next].transcription}</p>
+				<span onClick={handleShowState}>
+				{show ? 
+				<button className={styles.button}>Проверить</button>:
+				<p className={styles.wordRu}>{words[next].russian}</p>}</span>
+			</section>
+			<button className={styles.arrow} onClick={handleNextState}> &rang;</button>
 		</div>
 	)
 }
