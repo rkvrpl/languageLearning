@@ -6,10 +6,10 @@
 }
 
 .pencil{
-	background: url('../../../../../img/pencil.svg');
+	background: url('../../../img/pencil.svg');
 }
 .trash{
-	background: url('../../../../../img/trash.svg') 0 0 no-repeat;
+	background: url('../../../img/trash.svg') 0 0 no-repeat;
 }
 .pencil,
 .trash{
