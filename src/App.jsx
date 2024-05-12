@@ -1,8 +1,7 @@
 import Header from './assets/components/Header/Header'
-import CardOfWord from './assets/components/Card/CardOfWord'
+import CardParent from './assets/components/Card/CardParent/CardParent'
 import Table from './assets/components/Table/Table/Table'
 import Footer from './assets/components/Footer/Footer'
-import words from './assets/data/data.json'
 import ErrorPage from './assets/components/ErrorPage/ErrorPage'
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
@@ -15,7 +14,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Table />} />
-          <Route path="/game" element={<CardOfWord words = {words}/>} />
+          <Route path="/game" element={<CardParent/>} />
           <Route path="*" element={<ErrorPage/>} />
         </Routes>
         <Footer />
