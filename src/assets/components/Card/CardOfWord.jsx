@@ -14,7 +14,8 @@ const CardOfWord = (props) => {
 			ref.current.focus()
 			console.log('сработало')
 		}
-	},[words[next].english])
+		setShow(true)
+	},[next])
 
 	const handleShowState = () =>{
 			setShow(!show)
