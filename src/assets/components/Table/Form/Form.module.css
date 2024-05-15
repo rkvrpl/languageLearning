@@ -1,0 +1,40 @@
+.input{
+	font-family: var(--font);
+	border-radius: 15px;
+	padding: 10px;
+	border-color: #EDA8AA;
+	animation: ani 2.5s forwards;
+}
+.invalid{
+	border: 1px solid #e60808;
+	background-color: #e3aeae;
+}
+
+/* input:focus {
+	outline: none;
+	border-color: #0ab2ea;
+	background-color: #e3f7fb;
+  } */
+
+  /* button:disabled,
+button:disabled:hover,
+button:disabled:active {
+  background-color: #ccc;
+  color: rgb(97, 97, 97);
+  border-color: #ccc;
+  cursor: not-allowed;
+} */
+/* 
+.invalid input {
+	border: 1px solid #e60808;
+	background-color: #e3caca;
+  }
+  
+  .invalid input:focus {
+	border-color: #e87c01;
+	background-color: #decfbe;
+  }
+  
+  .error-text {
+	color: #e60808;
+  } */

@@ -1,5 +1,6 @@
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
+import Form from '../Form/Form'
 import style from './TableWords.module.css'
 import '../../../style/variables.css'
 import { useState } from 'react'
@@ -11,23 +12,15 @@ const [change, setChange] = useState(false)
 
 const handelChangeState = () => setChange(!change)
 
+
 	return(
     <>
     <TableBody>{change? 
-      <>
-      <TableCell>
-        <input className={style.input} type="text" name={english} id={id} />
-      </TableCell>
-      <TableCell>
-        <input className={style.input} type="text" name={transcription} id={id} />
-      </TableCell>
-      <TableCell>
-        <input className={style.input} type="text" name={russian} id={id} />
-      </TableCell>
-      <TableCell>
-        <input className={style.input} type="text" name={tags} id={id} />
-      </TableCell>
-      </> 
+      <Form english={english} 
+			transcription={transcription} 
+			russian={russian} 
+			tags={tags} 
+			id ={id}/>
       :<>
       <TableCell className={style.header}>{english}</TableCell>
       <TableCell className={style.header}>{transcription}</TableCell>
