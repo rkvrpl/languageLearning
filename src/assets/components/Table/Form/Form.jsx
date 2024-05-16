@@ -45,6 +45,7 @@ const formSubmitHandler = (event) => {
 	return(
 	<>
 		<td>
+			<form id={id} onSubmit={formSubmitHandler}>
 			<input className={inputClass} 
 			type="text" 
 			name='english'
@@ -54,12 +55,14 @@ const formSubmitHandler = (event) => {
 			{isInputInvalid?
 			<p className={style.error}>{errorMessage}</p>:
 			<span></span>}
+			</form>
 		</td>
 		<td>
 			<input className={inputClass} 
 			type="text" 
 			name='transcription' 
 			id={id}
+			form={id}
 			onChange={inputChangeHandler}
 			onBlur={inputLostFocusHandler} />
 			{isInputInvalid?
@@ -71,6 +74,7 @@ const formSubmitHandler = (event) => {
 			type="text" 
 			name='russian'
 			id={id}
+			form={id}
 			onChange={inputChangeHandler}
 			onBlur={inputLostFocusHandler} />
 			{isInputInvalid?
@@ -82,6 +86,7 @@ const formSubmitHandler = (event) => {
 			type="text" 
 			name='tags' 
 			id={id}
+			form={id}
 			onChange={inputChangeHandler}
 			onBlur={inputLostFocusHandler} />
 			{isInputInvalid?
