@@ -10,6 +10,7 @@ const { english, transcription, russian, tags, id } = props
 const [input, setInput] = useState('')
 const [wasInputTouch, setWasInputTouch] = useState(false)
 
+
 const inputChangeHandler = (event) => {
     setInput(event.target.value)
 }
@@ -28,10 +29,12 @@ const inputClass = isInputInvalid
     ? style.input + ' ' + style.invalid
     : style.input
 
+const errorMessage = 'Заполните верно поле, пожалуйста'
+
 const formSubmitHandler = (event) => {
 	event.preventDefault()
 	setWasInputTouch(true)
-	console.log('input')
+	console.log(input)
 	if (!isEnteredInputValid) {
 		console.log('error')
 		return false;
@@ -41,15 +44,17 @@ const formSubmitHandler = (event) => {
 }
 
 	return(
-	<>
+	<form action='#'>
 		<TableCell>
 			<input className={inputClass} 
 			type="text" 
 			name={english} 
 			id={id}
 			onChange={inputChangeHandler}
-			onBlur={inputLostFocusHandler}
-			value={input} />
+			onBlur={inputLostFocusHandler} />
+			{isInputInvalid?
+			<p className={style.error}>{errorMessage}</p>:
+			<span></span>}
 		</TableCell>
 		<TableCell>
 			<input className={inputClass} 
@@ -57,8 +62,10 @@ const formSubmitHandler = (event) => {
 			name={transcription} 
 			id={id}
 			onChange={inputChangeHandler}
-			onBlur={inputLostFocusHandler}
-			value={input} />
+			onBlur={inputLostFocusHandler} />
+			{isInputInvalid?
+			<p className={style.error}>{errorMessage}</p>:
+			<span></span>}
 		</TableCell>
 		<TableCell>
 			<input className={inputClass} 
@@ -66,8 +73,10 @@ const formSubmitHandler = (event) => {
 			name={russian} 
 			id={id}
 			onChange={inputChangeHandler}
-			onBlur={inputLostFocusHandler}
-			value={input} />
+			onBlur={inputLostFocusHandler} />
+			{isInputInvalid?
+			<p className={style.error}>{errorMessage}</p>:
+			<span></span>}
 		</TableCell>
 		<TableCell>
 			<input className={inputClass} 
@@ -75,12 +84,20 @@ const formSubmitHandler = (event) => {
 			name={tags} 
 			id={id}
 			onChange={inputChangeHandler}
-			onBlur={inputLostFocusHandler}
-			value={input} />
+			onBlur={inputLostFocusHandler} />
+			{isInputInvalid?
+			<p className={style.error}>{errorMessage}</p>:
+			<span></span>}
 		</TableCell>
-	</> 
+		<TableCell align='right'>
+			<button className={style.save} disabled={isInputInvalid} onClick={formSubmitHandler}>Сохранить</button>
+			<button className={style.save}>Отмена</button>
+	    </TableCell>
+	</form> 
 	)
 }
 export default Form
+
+// onClick={handelChangeState}
 
 

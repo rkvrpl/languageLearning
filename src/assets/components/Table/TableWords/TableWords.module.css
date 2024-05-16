@@ -24,23 +24,3 @@
 .trash:hover{
 	transform: scale(1.4);
 }
-.save{
-	font-family: var(--font);
-	position: relative;
-	transform: translate(-59%, -37%);
-	color: rgb(255, 239, 220);
-	font-size: 1rem;
-	border: 0;
-	border-radius: 15px;
-	background-color: #EDA8AA;
-	padding: 8px;
-	transition: 0.7s;
-}
-.save:hover{
-	transform: translate(-59%, -37%) scale(1.2);
-}
-@keyframes ani {
-	0% {opacity: 0;}
-	50% {opacity: 0.5;}
-	100% {opacity: 1;}
-}
