@@ -1,5 +1,3 @@
-import TableBody from '@mui/material/TableBody'
-import TableCell from '@mui/material/TableCell'
 import Form from '../Form/Form'
 import style from './TableWords.module.css'
 import '../../../style/variables.css'
@@ -15,23 +13,22 @@ const handelChangeState = () => setChange(!change)
 
 	return(
     <>
-    <TableBody>{change? 
-      <Form english={english} 
-			transcription={transcription} 
-			russian={russian} 
-			tags={tags} 
-			id ={id} />
-      :<>
-      <TableCell className={style.header}>{english}</TableCell>
-      <TableCell className={style.header}>{transcription}</TableCell>
-      <TableCell className={style.header}>{russian}</TableCell>
-      <TableCell className={style.header}>{tags}</TableCell>
-      <TableCell align='right'> 
-        <button onClick={handelChangeState} className={style.pencil}></button>	
-        <button className={style.trash}></button>
-      </TableCell>
-      </>}
-    </TableBody>
+    <tbody>
+      <tr>{change? 
+        <Form id={id}
+        handelChangeState={handelChangeState} />
+        :<>
+        <td className={style.header}>{english}</td>
+        <td className={style.header}>{transcription}</td>
+        <td className={style.header}>{russian}</td>
+        <td className={style.header}>{tags}</td>
+        <td> 
+          <button onClick={handelChangeState} className={style.pencil}></button>	
+          <button className={style.trash}></button>
+        </td>
+        </>}
+      </tr>
+    </tbody>
     </>
 	)
 }

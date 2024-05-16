@@ -1,8 +1,3 @@
-import Table from '@mui/material/Table'
-import TableCell from '@mui/material/TableCell'
-import TableContainer from '@mui/material/TableContainer'
-import TableHead from '@mui/material/TableHead'
-import TableRow from '@mui/material/TableRow'
 import '../../../style/variables.css'
 import styles from './TableHeader.module.css'
 
@@ -10,20 +5,18 @@ import styles from './TableHeader.module.css'
 const TableHeader = (props) =>{
 
 	return(
-		<TableContainer className={styles.table}>
-			<Table>
-				<TableHead>
-					<TableRow>
-						<TableCell className={styles.header} sx={{ width: 200 }}>Английский</TableCell>
-						<TableCell className={styles.header} sx={{ width: 200 }}>Транскрипция</TableCell>
-						<TableCell className={styles.header} sx={{ width: 200 }}>Перевод</TableCell>
-						<TableCell className={styles.header} sx={{ width: 200 }}>Тэг</TableCell>
-						<TableCell className={styles.header} sx={{ width: 300 }}>Изменить / Удалить</TableCell>
-					</TableRow>
-				</TableHead>
+		<table className={styles.table}>
+				<thead>
+					<tr>
+						<th className={styles.header}>Английский</th>
+						<th className={styles.header}>Транскрипция</th>
+						<th className={styles.header}>Перевод</th>
+						<th className={styles.header}>Тэг</th>
+						<th className={styles.header}>Изменить / Удалить</th>
+					</tr>
+				</thead>
 				{props.childComponent}
-			</Table>
-		</TableContainer>
+		</table>
 	)
 }
 export default TableHeader

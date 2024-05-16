@@ -1,10 +1,9 @@
-import TableCell from '@mui/material/TableCell'
 import style from './Form.module.css'
 import '../../../style/variables.css'
 import { useState } from 'react'
 
 const Form = (props) => {
-const { english, transcription, russian, tags, id } = props
+const { id, handelChangeState } = props
 
 
 const [input, setInput] = useState('')
@@ -44,60 +43,58 @@ const formSubmitHandler = (event) => {
 }
 
 	return(
-	<form action='#'>
-		<TableCell>
+	<>
+		<td>
 			<input className={inputClass} 
 			type="text" 
-			name={english} 
+			name='english'
 			id={id}
 			onChange={inputChangeHandler}
 			onBlur={inputLostFocusHandler} />
 			{isInputInvalid?
 			<p className={style.error}>{errorMessage}</p>:
 			<span></span>}
-		</TableCell>
-		<TableCell>
+		</td>
+		<td>
 			<input className={inputClass} 
 			type="text" 
-			name={transcription} 
+			name='transcription' 
 			id={id}
 			onChange={inputChangeHandler}
 			onBlur={inputLostFocusHandler} />
 			{isInputInvalid?
 			<p className={style.error}>{errorMessage}</p>:
 			<span></span>}
-		</TableCell>
-		<TableCell>
+		</td>
+		<td>
 			<input className={inputClass} 
 			type="text" 
-			name={russian} 
+			name='russian'
 			id={id}
 			onChange={inputChangeHandler}
 			onBlur={inputLostFocusHandler} />
 			{isInputInvalid?
 			<p className={style.error}>{errorMessage}</p>:
 			<span></span>}
-		</TableCell>
-		<TableCell>
+		</td>
+		<td>
 			<input className={inputClass} 
 			type="text" 
-			name={tags} 
+			name='tags' 
 			id={id}
 			onChange={inputChangeHandler}
 			onBlur={inputLostFocusHandler} />
 			{isInputInvalid?
 			<p className={style.error}>{errorMessage}</p>:
 			<span></span>}
-		</TableCell>
-		<TableCell align='right'>
+		</td>
+		<td align='right'>
 			<button className={style.save} disabled={isInputInvalid} onClick={formSubmitHandler}>Сохранить</button>
-			<button className={style.save}>Отмена</button>
-	    </TableCell>
-	</form> 
+			<button className={style.save} onClick={handelChangeState}>Отмена</button>
+	    </td>
+	</> 
 	)
 }
 export default Form
-
-// onClick={handelChangeState}
 
 
