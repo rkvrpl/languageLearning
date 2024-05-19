@@ -3,12 +3,10 @@ import '../../../style/variables.css'
 import { useState } from 'react'
 
 const Form = (props) => {
-const { id, handelChangeState } = props
-
+const { id, handelChangeState, handleUpdateWord } = props
 
 const [input, setInput] = useState('')
 const [wasInputTouch, setWasInputTouch] = useState(false)
-
 
 const inputChangeHandler = (event) => {
     setInput(event.target.value)
@@ -94,7 +92,7 @@ const formSubmitHandler = (event) => {
 			<span></span>}
 		</td>
 		<td align='right'>
-			<button className={style.save} disabled={isInputInvalid} onClick={formSubmitHandler}>Сохранить</button>
+			<button className={style.save} disabled={isInputInvalid} onClick={handleUpdateWord}>Сохранить</button>
 			<button className={style.save} onClick={handelChangeState}>Отмена</button>
 	    </td>
 	</> 

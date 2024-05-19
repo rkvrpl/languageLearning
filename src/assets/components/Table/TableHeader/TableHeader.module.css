@@ -3,6 +3,9 @@
 	font-size: 1.3rem  !important;
 	font-weight: 700 !important;
 }
-.table{
+.page{
 	padding-top: 70px;
+}
+.table{
+	width: 100%;
 }

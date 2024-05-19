@@ -1,10 +1,25 @@
 import '../../../style/variables.css'
 import styles from './TableHeader.module.css'
+import WordContext from '../../../Context/WordContext'
+import { useContext, useEffect } from 'react'
+import AddWord from '../AddWords/AddWords'
 
 
 const TableHeader = (props) =>{
+	const { addWord, fetchWords } =
+    useContext(WordContext)
+
+	useEffect(() => {
+		fetchWords()
+	}, [])
+
+	const handleAddWord = (newWord) => {
+		addWord(newWord)
+	}
 
 	return(
+		<div className={styles.page}> 
+		<AddWord onSubmitInWordlist={handleAddWord} />
 		<table className={styles.table}>
 				<thead>
 					<tr>
@@ -17,6 +32,7 @@ const TableHeader = (props) =>{
 				</thead>
 				{props.childComponent}
 		</table>
+		</div>
 	)
 }
 export default TableHeader
