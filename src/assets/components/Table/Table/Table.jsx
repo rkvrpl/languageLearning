@@ -1,11 +1,10 @@
 import TableHeader from '../TableHeader/TableHeader.jsx'
 import TableWords from '../TableWords/TableWords.jsx'
-// import words from '../../../data/data.json'
 import WordContext from '../../../Context/WordContext.jsx'
 import { useContext, useEffect } from 'react'
 
 
-const Table = (props) =>{
+const Table = () =>{
 
 	const { words, fetchWords } =
     useContext(WordContext)
@@ -22,7 +21,7 @@ const Table = (props) =>{
 			transcription={item.transcription} 
 			russian={item.russian} 
 			tags={item.tags} 
-			key={item.id}
+			key={item.english}
 			id ={item.id}/>
 		)})}
 		/>

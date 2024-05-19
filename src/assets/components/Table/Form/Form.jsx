@@ -80,24 +80,17 @@ const formSubmitHandler = (event) => {
 			<span></span>}
 		</td>
 		<td>
-			<input className={inputClass} 
-			type="text" 
-			name='tags' 
-			id={id}
-			form={id}
-			onChange={inputChangeHandler}
-			onBlur={inputLostFocusHandler} />
-			{isInputInvalid?
-			<p className={style.error}>{errorMessage}</p>:
-			<span></span>}
+			<span></span>
 		</td>
 		<td align='right'>
-			<button className={style.save} disabled={isInputInvalid} onClick={handleUpdateWord}>Сохранить</button>
+			<button className={style.save} disabled={isInputInvalid} onClick={() => handleUpdateWord(input)}>Сохранить</button>
 			<button className={style.save} onClick={handelChangeState}>Отмена</button>
 	    </td>
 	</> 
 	)
 }
 export default Form
+
+// исправить форму у каждого слова свой айди чтоб изменить
 
 

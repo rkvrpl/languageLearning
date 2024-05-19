@@ -20,24 +20,30 @@ const AddWord = (props) => {
 	return (
 		<form className={style.form} onSubmit={handleSubmit}>
 			<input
+			className={style.input}
 			type='text'
+			name='english'
 			value={english}
 			onChange={(event) => setEnglish(event.target.value)}
 			placeholder='Слово'
 			/>
 			<input
+			className={style.input}
 			type='text'
+			name='transcription'
 			value={transcription}
 			onChange={(event) => setTranscription(event.target.value)}
 			placeholder='Транскрипция'
 			/>
 			<input
+			className={style.input}
 			type='text'
+			name='russian'
 			value={russian}
 			onChange={(event) => setRussian(event.target.value)}
 			placeholder='Перевод'
 			/>
-			<button type='submit'>Добавить</button>
+			<button className={style.save} type='submit'>Добавить</button>
 		</form>
 	);
 };

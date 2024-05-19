@@ -39,9 +39,9 @@ const { fetchWords, updateWord, deleteWord } =
         <td className={style.header}>{transcription}</td>
         <td className={style.header}>{russian}</td>
         <td className={style.header}>{tags?tags:'без тэга'}</td>
-        <td> 
+        <td className={style.header}> 
           <button onClick={handelChangeState} className={style.pencil}></button>	
-          <button onClick={handleDeleteWord} className={style.trash}></button>
+          <button onClick={() => handleDeleteWord(id)} className={style.trash}></button>
         </td>
         </>}
       </tr>
