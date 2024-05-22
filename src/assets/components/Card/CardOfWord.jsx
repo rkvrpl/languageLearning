@@ -1,19 +1,20 @@
 import styles from './CardOfWord.module.css'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
+import wordsStore from '../../stores/WordsStores'
+import { observer } from 'mobx-react'
 
-const CardOfWord = (props) => {
-	const { words, handleSetValue } = props
-	
+const CardOfWord = observer((props) => {
+	const { handleSetValue } = props
+
 	const [show, setShow] = useState(true)
 	const [next, setNext] = useState(0)
 	
-	const ref = useRef(null)
+
+	const { words } = wordsStore
+
+	console.log(words)
 
 	useEffect(() => {
-		if(ref.current){
-			ref.current.focus()
-			console.log('сработало')
-		}
 		setShow(true)
 	},[next])
 
@@ -43,12 +44,12 @@ const CardOfWord = (props) => {
 				<p className={styles.transcription}>{words[next].transcription}</p>
 				<span onClick={handleShowState}>
 				{show ? 
-				<button ref={ref} className={styles.button} onClick={handleSetValue}>Проверить</button>:
+				<button className={styles.button} onClick={handleSetValue}>Проверить</button>:
 				<p className={styles.wordRu}>{words[next].russian}</p>}
 				</span>
 			</section>
 			<button className={styles.arrow} onClick={handleNextState}> &rang;</button>
 		</section>
 	)
-}
+})
 export default CardOfWord
