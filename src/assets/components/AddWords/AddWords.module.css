@@ -1,0 +1,32 @@
+.form{
+	display: flex;
+	justify-content: space-evenly;
+	padding: 10px;
+}
+.input{
+	font-family: var(--font);
+	border-radius: 15px;
+	padding: 10px;
+	border-color: #EDA8AA;
+	animation: ani 2.5s forwards;
+}
+@keyframes ani {
+	0% {opacity: 0;}
+	50% {opacity: 0.5;}
+	100% {opacity: 1;}
+}
+.save{
+	font-family: var(--font);
+	position: relative;
+	transform: translate(-100%, 0%);
+	color: rgb(255, 239, 220);
+	font-size: 1rem;
+	border: 0;
+	border-radius: 15px;
+	background-color: #EDA8AA;
+	padding: 8px;
+	transition: 0.7s;
+}
+.save:hover{
+	transform: translate(-100%, 0%) scale(1.2);
+}
