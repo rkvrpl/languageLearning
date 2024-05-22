@@ -1,11 +1,11 @@
 import style from './Form.module.css'
 import '../../../style/variables.css'
 import { useState } from 'react'
-// import Input from './Input'
+import Input from './Input'
 
 const Form = (props) => {
 const { id, handelChangeState } = props
-// const nameInput = ['english', 'transcription', 'russian']
+const nameInput = ['english', 'transcription', 'russian']
 
 
 const [input, setInput] = useState('')
@@ -46,8 +46,8 @@ const formSubmitHandler = (event) => {
 
 	return(
 	<>
-
-	{/* {nameInput.map((item)=>{
+    <form id={id} onSubmit={formSubmitHandler}></form>
+	{nameInput.map((item)=>{
 		return(<td><Input 
 			id={item}
 			name={item} 
@@ -58,9 +58,8 @@ const formSubmitHandler = (event) => {
 			errorMessage={errorMessage}
 			styleError={style.error}
 			key={item}/></td>)
-		})} */}
-		<td>
-		<form id={id} onSubmit={formSubmitHandler}></form>
+		})}
+		{/* <td>
 			<input className={inputClass} 
 			type="text" 
 			name='english'
@@ -96,11 +95,11 @@ const formSubmitHandler = (event) => {
 			<p className={style.error}>{errorMessage}</p>:
 			<span></span>}
 		</td>
-		<td></td>
+		<td></td>*/}
 		<td align='right'>
 			<button className={style.save} disabled={isInputInvalid} onClick={formSubmitHandler}>Сохранить</button>
 			<button className={style.save} onClick={handelChangeState}>Отмена</button>
-	    </td>
+	    </td> 
 	</> 
 	)
 }
