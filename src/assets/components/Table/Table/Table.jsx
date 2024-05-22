@@ -1,8 +1,10 @@
-import TableHeader from '../TableHeader/TableHeader.jsx'
-import TableWords from '../TableWords/TableWords.jsx'
-import words from '../../../data/data.json'
+import TableHeader from '../TableHeader/TableHeader'
+import TableWords from '../TableWords/TableWords'
+import wordsStore from '../../../stores/WordsStores'
+import { observer } from 'mobx-react'
 
-const Table = (props) =>{
+const Table = observer((props) =>{
+	const { words } = wordsStore
 
 	return(
 		<TableHeader childComponent={
@@ -16,5 +18,5 @@ const Table = (props) =>{
 			id ={item.id}/>
 		)})}/>
 	)
-}
+})
 export default Table

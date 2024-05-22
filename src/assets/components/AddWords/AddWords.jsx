@@ -2,7 +2,7 @@ import { useState } from 'react'
 import style from './AddWords.module.css'
 
 const AddWord = (props) => {
-	// const { onSubmitInWordlist } = props
+	const { onSubmitInWordlist } = props
 
 	const [english, setEnglish] = useState('')
 	const [transcription, setTranscription] = useState('')
@@ -11,7 +11,7 @@ const AddWord = (props) => {
 	const handleSubmit = (event) => {
 	event.preventDefault()
 	const newWord = { english, transcription, russian }
-	// onSubmitInWordlist(newWord)
+	onSubmitInWordlist(newWord)
 	setEnglish('')
 	setTranscription('')
 	setRussian('')

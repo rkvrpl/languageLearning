@@ -1,14 +1,25 @@
 import '../../../style/variables.css'
 import styles from './TableHeader.module.css'
 import AddWord from '../../AddWords/AddWords'
+import wordsStore from '../../../stores/WordsStores'
+import { observer } from 'mobx-react'
+import { useEffect } from 'react'
 
 
+const TableHeader = observer((props) =>{
+	const { fetchWords, addWord } = wordsStore
 
-const TableHeader = (props) =>{
+	useEffect(() => {
+		fetchWords()
+	}, [])
+
+	const handleAddWord = (newWord) => {
+		addWord(newWord)
+	}
 
 	return(
 		<div className={styles.page}> 
-		<AddWord />
+		<AddWord onSubmitInWordlist={handleAddWord} />
 		<table className={styles.table}>
 				<thead>
 					<tr>
@@ -24,7 +35,5 @@ const TableHeader = (props) =>{
 		</div>
 
 	)
-}
+})
 export default TableHeader
-
-// onSubmitInWordlist={handleAddWord} 

@@ -1,11 +1,9 @@
 import style from './Form.module.css'
 import '../../../style/variables.css'
 import { useState } from 'react'
-// import Input from './Input'
 
 const Form = (props) => {
-const { id, handelChangeState } = props
-// const nameInput = ['english', 'transcription', 'russian']
+const { id, handelChangeState, handleUpdateWord } = props
 
 
 const [input, setInput] = useState('')
@@ -46,19 +44,6 @@ const formSubmitHandler = (event) => {
 
 	return(
 	<>
-
-	{/* {nameInput.map((item)=>{
-		return(<td><Input 
-			id={item}
-			name={item} 
-			inputClass={inputClass}
-			inputChangeHandler={inputChangeHandler}
-			inputLostFocusHandler={inputLostFocusHandler}
-			isInputInvalid={isInputInvalid}
-			errorMessage={errorMessage}
-			styleError={style.error}
-			key={item}/></td>)
-		})} */}
 		<td>
 		<form id={id} onSubmit={formSubmitHandler}></form>
 			<input className={inputClass} 
@@ -98,7 +83,7 @@ const formSubmitHandler = (event) => {
 		</td>
 		<td></td>
 		<td align='right'>
-			<button className={style.save} disabled={isInputInvalid} onClick={formSubmitHandler}>Сохранить</button>
+			<button className={style.save} disabled={isInputInvalid} onClick={() => handleUpdateWord(input)}>Сохранить</button>
 			<button className={style.save} onClick={handelChangeState}>Отмена</button>
 	    </td>
 	</> 
