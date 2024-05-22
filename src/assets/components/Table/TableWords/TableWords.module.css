@@ -1,8 +1,9 @@
 
 .header{
-	font-family: var(--font) !important;
-	font-size: 1.2rem !important;
-	color: var(--font-color) !important;
+	font-family: var(--font);
+	font-size: 1.2rem;
+	color: var(--font-color);
+	text-align: center;
 }
 
 .pencil{

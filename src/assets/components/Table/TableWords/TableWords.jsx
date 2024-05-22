@@ -22,7 +22,7 @@ const handelChangeState = () => setChange(!change)
         <td className={style.header}>{transcription}</td>
         <td className={style.header}>{russian}</td>
         <td className={style.header}>{tags}</td>
-        <td> 
+        <td className={style.header}> 
           <button onClick={handelChangeState} className={style.pencil}></button>	
           <button className={style.trash}></button>
         </td>

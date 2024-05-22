@@ -1,10 +1,14 @@
 import '../../../style/variables.css'
 import styles from './TableHeader.module.css'
+import AddWord from '../../AddWords/AddWords'
+
 
 
 const TableHeader = (props) =>{
 
 	return(
+		<div className={styles.page}> 
+		<AddWord />
 		<table className={styles.table}>
 				<thead>
 					<tr>
@@ -17,6 +21,10 @@ const TableHeader = (props) =>{
 				</thead>
 				{props.childComponent}
 		</table>
+		</div>
+
 	)
 }
 export default TableHeader
+
+// onSubmitInWordlist={handleAddWord} 
