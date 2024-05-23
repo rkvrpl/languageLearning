@@ -44,7 +44,7 @@ const formSubmitHandler = (event) => {
 
 	return(
 	<>
-		<td>
+		<td className={style.container}>
 		<form id={id} onSubmit={formSubmitHandler}></form>
 			<input className={inputClass} 
 			type="text" 
@@ -57,7 +57,7 @@ const formSubmitHandler = (event) => {
 			<p className={style.error}>{errorMessage}</p>:
 			<span></span>}
 		</td>
-		<td>
+		<td className={style.container}>
 			<input className={inputClass} 
 			type="text" 
 			name='transcription' 
@@ -69,7 +69,7 @@ const formSubmitHandler = (event) => {
 			<p className={style.error}>{errorMessage}</p>:
 			<span></span>}
 		</td>
-		<td>
+		<td className={style.container}>
 			<input className={inputClass} 
 			type="text" 
 			name='russian'
@@ -81,7 +81,7 @@ const formSubmitHandler = (event) => {
 			<p className={style.error}>{errorMessage}</p>:
 			<span></span>}
 		</td>
-		<td></td>
+		<td>{tags?tags:'без тэга'}</td>
 		<td align='right'>
 			<button className={style.save} disabled={isInputInvalid} onClick={() => handleUpdateWord(input)}>Сохранить</button>
 			<button className={style.save} onClick={handelChangeState}>Отмена</button>

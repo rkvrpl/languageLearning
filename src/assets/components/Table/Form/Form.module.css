@@ -1,9 +1,14 @@
+.container{
+	text-align:center;
+	height: 65px;
+}
 .input{
 	font-family: var(--font);
 	border-radius: 15px;
 	padding: 10px;
 	border-color: #EDA8AA;
 	animation: ani 2.5s forwards;
+	text-align: center;
 }
 .invalid{
 	border: 1px solid #e60808;
