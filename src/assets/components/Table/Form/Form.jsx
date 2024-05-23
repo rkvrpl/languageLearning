@@ -42,7 +42,7 @@ const formSubmitHandler = (event) => {
 
 	return(
 	<>
-		<td>
+		<td className={style.container}>
 			<form id={id} onSubmit={formSubmitHandler}>
 			<input className={inputClass} 
 			type="text" 
@@ -55,7 +55,7 @@ const formSubmitHandler = (event) => {
 			<span></span>}
 			</form>
 		</td>
-		<td>
+		<td className={style.container}>
 			<input className={inputClass} 
 			type="text" 
 			name='transcription' 
@@ -67,7 +67,7 @@ const formSubmitHandler = (event) => {
 			<p className={style.error}>{errorMessage}</p>:
 			<span></span>}
 		</td>
-		<td>
+		<td className={style.container}>
 			<input className={inputClass} 
 			type="text" 
 			name='russian'

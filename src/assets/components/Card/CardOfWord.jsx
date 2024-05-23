@@ -1,21 +1,23 @@
 import styles from './CardOfWord.module.css'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import WordContext from '../../Context/WordContext'
 
 const CardOfWord = (props) => {
-	const { words, handleSetValue } = props
-	
+	const { handleSetValue } = props
+
+	const { words, fetchWords } =
+    useContext(WordContext)
+
 	const [show, setShow] = useState(true)
 	const [next, setNext] = useState(0)
-	
-	const ref = useRef(null)
 
 	useEffect(() => {
-		if(ref.current){
-			ref.current.focus()
-			console.log('сработало')
-		}
 		setShow(true)
 	},[next])
+	
+	useEffect(() => {
+		fetchWords()
+	}, [])
 
 	const handleShowState = () =>{
 			setShow(!show)
@@ -43,7 +45,7 @@ const CardOfWord = (props) => {
 				<p className={styles.transcription}>{words[next].transcription}</p>
 				<span onClick={handleShowState}>
 				{show ? 
-				<button ref={ref} className={styles.button} onClick={handleSetValue}>Проверить</button>:
+				<button className={styles.button} onClick={handleSetValue}>Проверить</button>:
 				<p className={styles.wordRu}>{words[next].russian}</p>}
 				</span>
 			</section>
