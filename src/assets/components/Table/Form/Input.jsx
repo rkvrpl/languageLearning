@@ -1,24 +1,24 @@
-
+import style from './Input.module.css'
 
 
 const Input = (props)=>{
-	const { id, name, inputClass, inputChangeHandler, inputLostFocusHandler, isInputInvalid, errorMessage, styleError } = props
+	const { id, name, inputClass, type, onChange, onBlur, value, isInvalid } = props
+	const errorMessage = 'Заполните верно поле, пожалуйста'
 
 	return(
-		<>
-		<input className={inputClass} 
-			type="text" 
+		<td className={style.container}>
+			<input
+			className={inputClass}
+			type={type}
 			name={name}
 			id={id}
 			form={id}
-			onChange={inputChangeHandler}
-			onBlur={inputLostFocusHandler} />
-			{isInputInvalid?
-			<p className={styleError}>{errorMessage}</p>:
-			<span></span>}
-		</>
+			onChange={onChange}
+			onBlur={onBlur}
+			value={value}
+			/>
+			{isInvalid && <p className={style.error}>{errorMessage}</p>}
+		</td>
 	)
-
 }
-
 export default Input
