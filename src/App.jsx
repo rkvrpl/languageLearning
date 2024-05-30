@@ -63,7 +63,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Table />} />
-          <Route path="/game" element={<CardParent/>} />
+          <Route path="/game" element={<CardParent words={words}/>} />
           <Route path="*" element={<ErrorPage/>} />
         </Routes>
         <Footer />

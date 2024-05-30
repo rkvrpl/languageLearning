@@ -10,6 +10,7 @@ const CardOfWord = (props) => {
 
 	const [show, setShow] = useState(true)
 	const [next, setNext] = useState(0)
+	const [learnedWords, setLearnedWords] = useState([])
 
 	useEffect(() => {
 		setShow(true)
@@ -36,7 +37,17 @@ const CardOfWord = (props) => {
 			setNext(words.length - 1)
 		}
 	}
-	
+
+	const checkedWord = (word) => {
+		if(learnedWords.some(item => item === word)){
+		setLearnedWords(learnedWords.filter(item => item !== word))
+		}else {
+		setLearnedWords([...learnedWords, word])
+		handleSetValue()
+		}
+	}
+
+
 	return(
 		<section className={styles.block}>
 			<button className={styles.arrow} onClick={handleBackState}>&lang;</button>
@@ -45,7 +56,7 @@ const CardOfWord = (props) => {
 				<p className={styles.transcription}>{words[next].transcription}</p>
 				<span onClick={handleShowState}>
 				{show ? 
-				<button className={styles.button} onClick={handleSetValue}>Проверить</button>:
+				<button className={styles.button} onClick={() => checkedWord(words[next].id)}>Проверить</button>:
 				<p className={styles.wordRu}>{words[next].russian}</p>}
 				</span>
 			</section>
